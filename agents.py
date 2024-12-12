@@ -3,10 +3,6 @@ from crewai_tools import SerperDevTool, WebsiteSearchTool,YoutubeChannelSearchTo
 from langchain_openai import ChatOpenAI
 from langchain_anthropic import ChatAnthropic
 
-ClaudeSonnet = ChatAnthropic(
-    model="claude-3-5-sonnet-20241022"
-)
-
 class ResearchCrewAgents:
 
     def __init__(self):
