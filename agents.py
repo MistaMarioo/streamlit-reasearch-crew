@@ -2,6 +2,7 @@ from crewai import Agent
 from crewai_tools import SerperDevTool, WebsiteSearchTool,YoutubeChannelSearchTool, TXTSearchTool
 from langchain_openai import ChatOpenAI
 from langchain_anthropic import ChatAnthropic
+from anthropic import Anthropic
 
 class ResearchCrewAgents:
 
@@ -12,8 +13,11 @@ class ResearchCrewAgents:
         self.txt_tool = TXTSearchTool()
         self.gpt3 = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0.7)
         self.gpt4 = ChatOpenAI(model_name="gpt-4", temperature=0.7)
+        # Initialize Anthropic client first
+        anthropic_client = Anthropic()
         self.claude = ChatAnthropic(
-            model="claude-3-sonnet-20240229",
+            client=anthropic_client,  # Use the client directly
+            model_name="claude-3-sonnet-20240229",
             temperature=0.7
         )
 
