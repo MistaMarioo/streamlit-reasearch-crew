@@ -34,6 +34,7 @@ python-decouple = "^3.6"
 crewai = "^0.28.8"
 setuptools = "^68.0.0"  # Add setuptools to include pkg_resources
 anthropic = "^0.28.0"  # Add this line for the Anthropic library
+langchain-anthropic = "^0.1.0"  # Add this line as well
 
 [tool.poetry.extras]
 tools = ["crewai-tools"]
