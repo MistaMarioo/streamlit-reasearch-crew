@@ -32,6 +32,7 @@ embedchain = "^0.1.98"
 appdirs = "^1.4.4"
 python-decouple = "^3.6"
 crewai = "^0.28.8"
+setuptools = "^68.0.0"  # Add setuptools to include pkg_resources
 
 [tool.poetry.extras]
 tools = ["crewai-tools"]
