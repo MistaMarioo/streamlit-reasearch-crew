@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "crewai"
+name = "crewai-28"
 version = "0.28.8"
 description = "Cutting-edge framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks."
 authors = ["Joao Moura <joao@crewai.com>"]
@@ -14,6 +14,8 @@ Documentation = "https://github.com/joaomdmoura/CrewAI/wiki/Index"
 Repository = "https://github.com/joaomdmoura/crewai"
 
 [tool.poetry.dependencies]
+streamlit = "^1.13.0"
+pysqlite3-binary = "^0.5.1"
 python = ">=3.10,<=3.13"
 pydantic = "^2.4.2"
 langchain = "^0.1.10"
@@ -26,9 +28,10 @@ regex = "^2023.12.25"
 crewai-tools = { version = "^0.1.7", optional = true }
 click = "^8.1.7"
 python-dotenv = "1.0.0"
-python-decouple = "^3.8"
 embedchain = "^0.1.98"
 appdirs = "^1.4.4"
+python-decouple = "^3.6"
+crewai = "^0.28.8"
 
 [tool.poetry.extras]
 tools = ["crewai-tools"]
@@ -50,6 +53,7 @@ crewai-tools = "^0.1.7"
 [tool.isort]
 profile = "black"
 known_first_party = ["crewai"]
+
 
 
 [tool.poetry.group.test.dependencies]
