@@ -3,6 +3,7 @@ from crewai_tools import SerperDevTool, WebsiteSearchTool,YoutubeChannelSearchTo
 from langchain_openai import ChatOpenAI
 from langchain_anthropic import ChatAnthropic
 from anthropic import Anthropic
+from typing import Optional, List
 
 class ResearchCrewAgents:
 
@@ -14,7 +15,34 @@ class ResearchCrewAgents:
         self.gpt3 = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0.7)
         self.gpt4 = ChatOpenAI(model_name="gpt-4", temperature=0.7)
         # Initialize Anthropic client first
-        self.claude = ChatAnthropic()
+        # Initialize Claude directly with Anthropic API
+        try:
+            self.claude_client = Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+            # Test the client with a simple message
+            self.claude_client.messages.create(
+                model="claude-3-sonnet-20240229",
+                max_tokens=1000,
+                messages=[{
+                    "role": "user",
+                    "content": "Hello"
+                }]
+            )
+            print("Claude initialized successfully")
+        except Exception as e:
+            print(f"Error initializing Claude: {e}")
+
+    def use_claude(self, messages: List[dict], max_tokens: Optional[int] = 1000):
+        """Helper method to use Claude"""
+        try:
+            response = self.claude_client.messages.create(
+                model="claude-3-sonnet-20240229",
+                max_tokens=max_tokens,
+                messages=messages
+            )
+            return response.content[0].text
+        except Exception as e:
+            print(f"Error using Claude: {e}")
+            return None
 
     def researcher(self):
         # Detailed agent setup for the Researcher
