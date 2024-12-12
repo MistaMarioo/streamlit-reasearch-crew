@@ -14,8 +14,7 @@ class ResearchCrewAgents:
         self.txt_tool = TXTSearchTool()
         self.gpt3 = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0.7)
         self.gpt4 = ChatOpenAI(model_name="gpt-4", temperature=0.7)
-        self.claude_haiku = ChatAnthropic(model='claude-3-haiku-20240307', temperature=0.7)
-        self.claude_opus = ChatAnthropic(model='claude-3-opus-20240229', temperature=0.7)
+        self.claude_sonnet = ChatAnthropic(model="claude-3-5-sonnet-latest", temperature=0.7)
 
     def researcher(self):
         # Detailed agent setup for the Researcher
