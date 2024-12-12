@@ -14,12 +14,7 @@ class ResearchCrewAgents:
         self.gpt3 = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0.7)
         self.gpt4 = ChatOpenAI(model_name="gpt-4", temperature=0.7)
         # Initialize Anthropic client first
-        anthropic_client = Anthropic()
-        self.claude = ChatAnthropic(
-            client=anthropic_client,  # Use the client directly
-            model_name="claude-3-sonnet-20240229",
-            temperature=0.7
-        )
+        self.claude = ChatAnthropic()
 
     def researcher(self):
         # Detailed agent setup for the Researcher
