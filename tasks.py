@@ -100,7 +100,3 @@ class ResearchCrewTasks:
       - **Glossary of Terms**: Include a glossary of key terms and definitions used throughout the report for clarity.
             """
         )
-
-
-
-
