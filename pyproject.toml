@@ -15,7 +15,7 @@ Repository = "https://github.com/joaomdmoura/crewai"
 
 [tool.poetry.dependencies]
 streamlit = "*"
-pysqlite3-binary = "*"
+pysqlite3-binary = "^0.5.1"
 python = ">=3.10,<=3.13"
 pydantic = "*"
 langchain = "*"
