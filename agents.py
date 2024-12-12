@@ -1,6 +1,6 @@
 from crewai import Agent
 from crewai_tools import SerperDevTool, WebsiteSearchTool,YoutubeChannelSearchTool, TXTSearchTool
-from langchain.chat_models import ChatOpenAI, ChatAnthropic
+from langchain.chat_models import ChatOpenAI
 
 
 
@@ -13,7 +13,6 @@ class ResearchCrewAgents:
         self.txt_tool = TXTSearchTool()
         self.gpt3 = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0.7)
         self.gpt4 = ChatOpenAI(model_name="gpt-4", temperature=0.7)
-        self.anthropic = ChatAnthropic(model="claude-3.5", temperature=0.7)
 
     def researcher(self):
         # Detailed agent setup for the Researcher
