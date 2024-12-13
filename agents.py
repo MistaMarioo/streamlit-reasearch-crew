@@ -1,6 +1,9 @@
 from crewai import Agent
 from crewai_tools import SerperDevTool, WebsiteSearchTool,YoutubeChannelSearchTool, TXTSearchTool
 from langchain_openai import ChatOpenAI
+from langchain_anthropic import ChatAnthropic
+
+LLM = ChatAnthropic(temperature=0, model_name="claude-3-opus-2024229")
 
 class ResearchCrewAgents:
 
